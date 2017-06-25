@@ -1,0 +1,1376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.8">
+ <project-name>work_plan</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="PlayPen Database" />
+  </data-source>
+  <data-source id="DS2">
+   <property key="Connection Type" value="PostgreSQL" />
+   <property key="Logical" value="PostgreSQL_BuildingWorld" />
+   <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/BuildingWorld" />
+   <property key="UID" value="postgres" />
+   <property key="PWD" value="qwerfdsa" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+  <database id="DB0" populated="true" UUID="cf6a007d-64ba-4fe1-8158-573b27d2752f" dbcs-ref="DS2" name="PostgreSQL_BuildingWorld" physicalName="PostgreSQL_BuildingWorld" >
+   <catalog id="CAT1" populated="true" UUID="8118934b-8b87-4139-bb4b-7d56e017e713" name="BuildingWorld" nativeTerm="database" physicalName="BuildingWorld" >
+    <schema id="SCH2" populated="false" UUID="dd896c89-9de1-42dd-9414-bc520655592e" name="information_schema" nativeTerm="schema" physicalName="information_schema" >
+    </schema>
+    <schema id="SCH3" populated="false" UUID="f5157253-ce5c-48e4-bd07-a441541bd885" name="pg_catalog" nativeTerm="schema" physicalName="pg_catalog" >
+    </schema>
+    <schema id="SCH4" populated="false" UUID="699618e6-0f22-472e-83f1-e762f619db65" name="pg_toast_temp_1" nativeTerm="schema" physicalName="pg_toast_temp_1" >
+    </schema>
+    <schema id="SCH5" populated="true" UUID="306bf949-00c1-4fa8-8a72-e8297b08558f" name="pri" nativeTerm="schema" physicalName="pri" >
+     <table id="TAB6" populated="true" UUID="6e8829f1-9158-4860-aff4-824eadfef0f0" name="app_user" objectType="TABLE" physicalName="app_user" >
+      <remarks>使用者表</remarks>
+      <folder id="FOLTAB61" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL7" populated="true" UUID="1e41c6af-f7bb-45d6-ab86-16cbb99043a6" autoIncrement="true" defaultValue="nextval(&apos;pri.app_user_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>使用者PK</remarks>
+       </column>
+       <column id="COL8" populated="true" UUID="a12c8019-2bbc-47ff-862f-fb99044dc320" autoIncrement="false" defaultValue="" name="account" nullable="1" physicalName="account" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>帳號(工號)</remarks>
+       </column>
+       <column id="COL9" populated="true" UUID="9d81bf9a-520e-4ab3-a55e-3124d66116ae" autoIncrement="false" defaultValue="" name="employee_no" nullable="1" physicalName="employee_no" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL10" populated="true" UUID="89806878-844c-4b88-b687-3517d8106cb9" autoIncrement="false" defaultValue="" name="user_name" nullable="1" physicalName="user_name" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>使用者姓名</remarks>
+       </column>
+       <column id="COL11" populated="true" UUID="e4bc7b0d-1321-4d0d-a1f8-3cfc766a6f39" autoIncrement="false" defaultValue="" name="encrypt_passwd" nullable="1" physicalName="encrypt_passwd" precision="65" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>加密後的使用者密碼</remarks>
+       </column>
+       <column id="COL12" populated="true" UUID="1aeff9d5-ebd2-4e4d-9c97-722fcc654973" autoIncrement="false" defaultValue="&apos;0&apos;::bpchar" name="encrypt_type" nullable="1" physicalName="encrypt_type" precision="1" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
+        <remarks>密碼加密方式[0:不加密, 1:md5]</remarks>
+       </column>
+       <column id="COL13" populated="true" UUID="e691ecaa-5f87-4208-ac4d-6c4414dc4e89" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL14" populated="true" UUID="b0502da9-eafd-488e-a2e2-2a571317a795" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB63" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB62" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB64" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX15" populated="true" UUID="068f5689-fd93-4119-8517-2c869271e090" clustered="false" index-type="BTREE" name="app_user_pkey" physicalName="app_user_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC16" populated="true" UUID="61a9a3dd-4435-455d-9bbd-29a65b9ef19e" ascendingOrDescending="UNSPECIFIED" column-ref="COL7" name="id" physicalName="id" />
+       </index>
+       <index id="IDX17" populated="true" UUID="81f61a25-cc80-4a63-ba7c-30de0aba24ab" clustered="false" index-type="BTREE" name="app_user_account_key" physicalName="app_user_account_key" primaryKeyIndex="false" unique="true" >
+        <index-column id="IDC18" populated="true" UUID="4f08d17c-0954-48be-a8d1-3d37b57a3854" ascendingOrDescending="UNSPECIFIED" column-ref="COL8" name="account" physicalName="account" />
+       </index>
+       <index id="IDX19" populated="true" UUID="b27d6e4d-93a1-4025-bf7e-7fa7d8d0af05" clustered="false" index-type="BTREE" name="app_user_employee_no_key" physicalName="app_user_employee_no_key" primaryKeyIndex="false" unique="true" >
+        <index-column id="IDC20" populated="true" UUID="06b20706-b9f1-46a4-92ee-c71ba471edef" ascendingOrDescending="UNSPECIFIED" column-ref="COL9" name="employee_no" physicalName="employee_no" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB21" populated="true" UUID="d1da70fa-e0a0-4303-bb3f-efd7794aa54f" name="auth_group" objectType="TABLE" physicalName="auth_group" >
+      <remarks>授權群組表</remarks>
+      <folder id="FOLTAB211" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL22" populated="true" UUID="b4b8350d-4fb6-4289-b7f2-697936810dba" autoIncrement="true" defaultValue="nextval(&apos;pri.auth_group_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>授權群組PK</remarks>
+       </column>
+       <column id="COL23" populated="true" UUID="ccb360ad-599c-47ae-921b-53304a9f1465" autoIncrement="false" defaultValue="" name="auth_group_name" nullable="1" physicalName="auth_group_name" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>授權群組名稱;</remarks>
+       </column>
+       <column id="COL24" populated="true" UUID="582cd538-b6bd-42fe-81e4-dcbac13bb5e4" autoIncrement="false" defaultValue="" name="auth_group_description" nullable="1" physicalName="auth_group_description" precision="60" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>授權群組說明</remarks>
+       </column>
+       <column id="COL25" populated="true" UUID="5657f699-621b-4244-ae11-9de26e204b96" autoIncrement="false" defaultValue="" name="auth_group_type" nullable="1" physicalName="auth_group_type" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>授權群組形態;ex:R:角色, D:部門, T:任務小組, BU:商務單元</remarks>
+       </column>
+       <column id="COL26" populated="true" UUID="ca93cc01-3752-436d-a2b1-eff8975d90dd" autoIncrement="false" defaultValue="&apos;Y&apos;::character varying" name="editable" nullable="1" physicalName="editable" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>是否可編輯: Y:可編輯, N:不可編輯</remarks>
+       </column>
+       <column id="COL27" populated="true" UUID="7955510e-e1b2-4a56-a871-66358c52d32a" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL28" populated="true" UUID="74909e34-fff8-4919-b7ae-ad48d21c9dd2" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       <column id="COL29" populated="true" UUID="8b500852-c981-458c-99ca-d3aa636782f7" autoIncrement="false" defaultValue="" name="belong_org_id" nullable="1" physicalName="belong_org_id" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>搭配資料授權使用,資料所屬組織預設值</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB213" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB212" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB214" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX30" populated="true" UUID="fc1b20b8-cb12-483d-a0ad-d7cc7ffdf771" clustered="false" index-type="BTREE" name="auth_group_pkey" physicalName="auth_group_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC31" populated="true" UUID="32723300-e0ba-40a7-be9c-a96f3c02df5c" ascendingOrDescending="UNSPECIFIED" column-ref="COL22" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB32" populated="true" UUID="6d7ba48d-38f5-4e00-aa0c-521b1fed892e" name="data_auth" objectType="TABLE" physicalName="data_auth" >
+      <remarks>資料授權表: 授權角色可操作的資料範圍</remarks>
+      <folder id="FOLTAB321" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL33" populated="true" UUID="70a805a0-ae69-4f25-8a0a-8d74a4e7f968" autoIncrement="true" defaultValue="nextval(&apos;pri.data_auth_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>資料授權PK</remarks>
+       </column>
+       <column id="COL34" populated="true" UUID="2bb69d8f-5108-47e7-9103-7b2b482d0489" autoIncrement="false" defaultValue="" name="auth_group_id" nullable="1" physicalName="auth_group_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>授權群組ID FK</remarks>
+       </column>
+       <column id="COL35" populated="true" UUID="d32b0f34-7fec-4b4a-9afb-b81aedbae325" autoIncrement="false" defaultValue="" name="org_id" nullable="1" physicalName="org_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>組織ID FK</remarks>
+       </column>
+       <column id="COL36" populated="true" UUID="48d9394e-39c4-43ad-9630-f2b34ce9d4f8" autoIncrement="false" defaultValue="" name="view_range" nullable="1" physicalName="view_range" precision="1" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
+        <remarks>檢視範圍; l:僅該組織, d:該組織及其下屬組織</remarks>
+       </column>
+       <column id="COL37" populated="true" UUID="d8f770b5-6c2d-425f-b271-d9aa886e9f2b" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL38" populated="true" UUID="6145965e-2841-4743-ad16-250feb529f24" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB323" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB322" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB324" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX39" populated="true" UUID="74570767-6286-4849-a941-755d870d7917" clustered="false" index-type="BTREE" name="data_auth_pkey" physicalName="data_auth_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC40" populated="true" UUID="4aaf5351-001d-43bf-b165-cf0bf942b263" ascendingOrDescending="UNSPECIFIED" column-ref="COL33" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB41" populated="true" UUID="801a3f49-8eae-4493-8b01-1398a02b1f32" name="duty" objectType="TABLE" physicalName="duty" >
+      <remarks>任職表</remarks>
+      <folder id="FOLTAB411" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL42" populated="true" UUID="e17e4152-9462-492f-b361-0386c2d9d766" autoIncrement="true" defaultValue="nextval(&apos;pri.duty_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>任職PK</remarks>
+       </column>
+       <column id="COL43" populated="true" UUID="5e8a38dd-76b8-4059-8e6b-900779e68272" autoIncrement="false" defaultValue="" name="user_id" nullable="1" physicalName="user_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>使用者FK</remarks>
+       </column>
+       <column id="COL44" populated="true" UUID="a4952ab8-b1ed-4b1d-bec0-040d7ef29e05" autoIncrement="false" defaultValue="" name="auth_group_id" nullable="1" physicalName="auth_group_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>角色FK</remarks>
+       </column>
+       <column id="COL45" populated="true" UUID="fc8ef08b-6dd6-401f-b1ca-aba47c593fbb" autoIncrement="false" defaultValue="" name="valid_after" nullable="1" physicalName="valid_after" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>生效日</remarks>
+       </column>
+       <column id="COL46" populated="true" UUID="bb4cb72b-1616-4ea8-a228-d87ac007908e" autoIncrement="false" defaultValue="" name="valid_before" nullable="1" physicalName="valid_before" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>生效日</remarks>
+       </column>
+       <column id="COL47" populated="true" UUID="555c514a-e666-4c60-9352-693a801ca700" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL48" populated="true" UUID="ffc2bf19-9068-41e5-817c-86db96695e6c" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB413" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB412" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB414" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX49" populated="true" UUID="8dee2707-3da8-44ea-93aa-eded6de91dd2" clustered="false" index-type="BTREE" name="duty_pkey" physicalName="duty_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC50" populated="true" UUID="24330646-88dd-4703-8ea1-0e9a40f6373d" ascendingOrDescending="UNSPECIFIED" column-ref="COL42" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB51" populated="true" UUID="d4f1a6fc-8353-4d7f-a0c1-c0edada886af" name="fun" objectType="TABLE" physicalName="fun" >
+      <remarks>程式功能表</remarks>
+      <folder id="FOLTAB511" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL52" populated="true" UUID="bcddf64a-b0eb-4713-b988-e3a933d9c6c8" autoIncrement="true" defaultValue="nextval(&apos;pri.fun_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>程式功能PK</remarks>
+       </column>
+       <column id="COL53" populated="true" UUID="e663e20f-cb8a-4ddf-92bb-4df3e1dde2cc" autoIncrement="false" defaultValue="" name="parent_fun_id" nullable="1" physicalName="parent_fun_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>上層程式功能FK; 樹狀結構</remarks>
+       </column>
+       <column id="COL54" populated="true" UUID="8bd716c5-3cd2-4946-bc6b-0637b66601f0" autoIncrement="false" defaultValue="" name="service_id" nullable="1" physicalName="service_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>所屬軟體服務FK</remarks>
+       </column>
+       <column id="COL55" populated="true" UUID="4ac5fc00-0851-4c17-ab20-2385a7a78826" autoIncrement="false" defaultValue="" name="fun_code" nullable="1" physicalName="fun_code" precision="15" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>程式代碼</remarks>
+       </column>
+       <column id="COL56" populated="true" UUID="7ee3730a-ae4e-44ec-948a-495f3391bd50" autoIncrement="false" defaultValue="" name="fun_type" nullable="1" physicalName="fun_type" precision="2" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>程式形態; W:網頁應用程式, B:批次處理Batch, WS:WebService</remarks>
+       </column>
+       <column id="COL57" populated="true" UUID="b678e392-c051-4b08-ad3c-b7313345de55" autoIncrement="false" defaultValue="" name="layer" nullable="1" physicalName="layer" precision="2" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>層數</remarks>
+       </column>
+       <column id="COL58" populated="true" UUID="81c6e43a-e23d-4738-9f4c-d251f12d8c6e" autoIncrement="false" defaultValue="" name="layer_seq" nullable="1" physicalName="layer_seq" precision="3" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>同一層中的順序</remarks>
+       </column>
+       <column id="COL59" populated="true" UUID="ac7e7c6b-3330-4385-bced-4adf7b527b6f" autoIncrement="false" defaultValue="" name="fun_name" nullable="1" physicalName="fun_name" precision="60" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>程式功能名稱</remarks>
+       </column>
+       <column id="COL60" populated="true" UUID="bdfa9f1f-fbef-4fd9-96ff-e7487bb4ea0f" autoIncrement="false" defaultValue="" name="fun_path" nullable="1" physicalName="fun_path" precision="120" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>程式功能路徑</remarks>
+       </column>
+       <column id="COL61" populated="true" UUID="4b5d85d5-9884-4895-8378-ff6b8aa3365f" autoIncrement="false" defaultValue="" name="operations" nullable="1" physicalName="operations" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>程式功能操作; 對資料庫進行何種操作</remarks>
+       </column>
+       <column id="COL62" populated="true" UUID="1cc4a4e4-9539-42e3-a681-519697b12bc7" autoIncrement="false" defaultValue="" name="active_flag" nullable="1" physicalName="active_flag" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>啟用旗標; Y:啟用, N:未啟用</remarks>
+       </column>
+       <column id="COL63" populated="true" UUID="43cb799e-0d16-4425-ba3c-195fd9acc243" autoIncrement="false" defaultValue="" name="boot_flag" nullable="1" physicalName="boot_flag" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>啟動旗標; Y:可以啟動, N:不可啟動</remarks>
+       </column>
+       <column id="COL64" populated="true" UUID="517c4d0d-3181-46fa-9d3d-5df1d14eed2e" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL65" populated="true" UUID="07147c6d-9a83-4577-83df-6118ff188f8c" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB513" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB512" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB514" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX66" populated="true" UUID="a016c767-2de6-4ac9-ba44-bb8d3543c7f5" clustered="false" index-type="BTREE" name="fun_pkey" physicalName="fun_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC67" populated="true" UUID="b913b1e8-544f-4299-b987-6b42dc3d3fac" ascendingOrDescending="UNSPECIFIED" column-ref="COL52" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB68" populated="true" UUID="e6b802e0-370a-4e63-bb09-d04c56bde33f" name="fun_auth" objectType="TABLE" physicalName="fun_auth" >
+      <remarks>功能授權表</remarks>
+      <folder id="FOLTAB681" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL69" populated="true" UUID="44a794c4-28ec-4b8f-b4a3-23f3b119f58f" autoIncrement="true" defaultValue="nextval(&apos;pri.fun_auth_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>功能授權PK</remarks>
+       </column>
+       <column id="COL70" populated="true" UUID="4077ab2c-9827-4320-9da0-7113d6cfce40" autoIncrement="false" defaultValue="" name="auth_group_id" nullable="1" physicalName="auth_group_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>授權群組ID FK</remarks>
+       </column>
+       <column id="COL71" populated="true" UUID="905437be-43f0-4052-b421-36eb76eba860" autoIncrement="false" defaultValue="" name="fun_id" nullable="1" physicalName="fun_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>程式功能FK</remarks>
+       </column>
+       <column id="COL72" populated="true" UUID="361d3ff1-821d-4b32-a067-0bce826b0944" autoIncrement="false" defaultValue="" name="operations" nullable="1" physicalName="operations" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>授權操作:</remarks>
+       </column>
+       <column id="COL73" populated="true" UUID="580ea080-aeb8-43a7-b1d0-5c552a0fa7af" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL74" populated="true" UUID="f3dd9446-264d-4453-bec0-fbdd4c7f6fa6" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB683" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB682" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB684" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX75" populated="true" UUID="17b9ec04-e112-4e01-8362-bf0239dfbe7a" clustered="false" index-type="BTREE" name="fun_auth_pkey" physicalName="fun_auth_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC76" populated="true" UUID="31484ddc-a0d4-499f-95da-48e30a977d3b" ascendingOrDescending="UNSPECIFIED" column-ref="COL69" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB77" populated="true" UUID="747ea4a2-ad19-43bb-83d6-c50acec94257" name="org" objectType="TABLE" physicalName="org" >
+      <remarks>組織表</remarks>
+      <folder id="FOLTAB771" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL78" populated="true" UUID="dc09e872-2ef0-4c13-9251-5428d5baa19b" autoIncrement="true" defaultValue="nextval(&apos;pri.org_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>組織表PK</remarks>
+       </column>
+       <column id="COL79" populated="true" UUID="725076db-a8b0-4c2d-a3a7-2255f97fc058" autoIncrement="false" defaultValue="" name="parent_org_id" nullable="1" physicalName="parent_org_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>上層組織FK; 樹狀組織, 若需支援網路形需另擴充</remarks>
+       </column>
+       <column id="COL80" populated="true" UUID="8625d1f0-cd6f-4b9f-ae0a-f1ea6c866cc1" autoIncrement="false" defaultValue="" name="org_name" nullable="1" physicalName="org_name" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>名稱</remarks>
+       </column>
+       <column id="COL81" populated="true" UUID="2fe6b6bb-8e23-4aa3-8cf1-e5f032c3a017" autoIncrement="false" defaultValue="" name="org_type" nullable="1" physicalName="org_type" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>組織樣態; G:集團group, C:公司company; B:商務單元biz unit; D:部門department; T:職務duty</remarks>
+       </column>
+       <column id="COL82" populated="true" UUID="6f3235a8-204b-455a-9920-8f773b7b5ec0" autoIncrement="false" defaultValue="" name="org_criteria1" nullable="1" physicalName="org_criteria1" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>組織條件一;組織性質; P:軟體開發者provider: A:經銷商agent; T:終端使用者terminal</remarks>
+       </column>
+       <column id="COL83" populated="true" UUID="434b15fa-b56b-47a8-9c15-624c09629cd7" autoIncrement="false" defaultValue="" name="org_criteria2" nullable="1" physicalName="org_criteria2" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>組織條件二;統一編號</remarks>
+       </column>
+       <column id="COL84" populated="true" UUID="bef255aa-945d-4a9d-9703-501c3d318d26" autoIncrement="false" defaultValue="" name="org_criteria3" nullable="1" physicalName="org_criteria3" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>組織條件三</remarks>
+       </column>
+       <column id="COL85" populated="true" UUID="89c3a2f2-a4bc-4192-a69a-aa423c3b451f" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL86" populated="true" UUID="9bcc583d-155e-43ff-ae03-c8439db7d967" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB773" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB772" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB774" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX87" populated="true" UUID="166d9b54-3758-4273-9e4b-afc6a312c02a" clustered="false" index-type="BTREE" name="org_pkey" physicalName="org_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC88" populated="true" UUID="293b30a3-e114-4ab4-bee7-b5a66546cb64" ascendingOrDescending="UNSPECIFIED" column-ref="COL78" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB89" populated="true" UUID="cad6d12b-2be8-4d40-8183-deaf05693b59" name="para" objectType="TABLE" physicalName="para" >
+      <remarks>權限用參數表</remarks>
+      <folder id="FOLTAB891" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL90" populated="true" UUID="6c24735c-9d1d-4170-affe-4656d44a680a" autoIncrement="true" defaultValue="nextval(&apos;pri.para_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>權限用參數表PK</remarks>
+       </column>
+       <column id="COL91" populated="true" UUID="86abd2fc-5cfb-4a8e-a03f-5ac11f2658d7" autoIncrement="false" defaultValue="" name="para_catalogue" nullable="1" physicalName="para_catalogue" precision="60" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>參數分類</remarks>
+       </column>
+       <column id="COL92" populated="true" UUID="b3a59eb3-55ff-4232-a71e-0ebe33370bfe" autoIncrement="false" defaultValue="" name="para_i18n" nullable="1" physicalName="para_i18n" precision="120" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>語系</remarks>
+       </column>
+       <column id="COL93" populated="true" UUID="94a9012c-dbf2-4834-9d86-90fc0b117c4e" autoIncrement="false" defaultValue="" name="para_name" nullable="1" physicalName="para_name" precision="60" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>參數名稱</remarks>
+       </column>
+       <column id="COL94" populated="true" UUID="07fb4938-c84e-4a20-bd52-bb7f40518b1d" autoIncrement="false" defaultValue="" name="para_value" nullable="1" physicalName="para_value" precision="60" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>參數值</remarks>
+       </column>
+       <column id="COL95" populated="true" UUID="9d1a3890-b3b2-4c2f-bd0d-d033dbbe0c99" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL96" populated="true" UUID="be2a9ef1-e2b6-4494-a56a-efcc454c146a" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB893" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB892" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB894" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX97" populated="true" UUID="088f9ca0-881e-4fa9-a158-93670631deff" clustered="false" index-type="BTREE" name="para_pkey" physicalName="para_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC98" populated="true" UUID="6610cbde-d708-4a2c-a91e-3710bc536588" ascendingOrDescending="UNSPECIFIED" column-ref="COL90" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB99" populated="true" UUID="5b774843-05ea-43a6-b660-84e9db0d6e51" name="service" objectType="TABLE" physicalName="service" >
+      <remarks>軟體服務表</remarks>
+      <folder id="FOLTAB991" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL100" populated="true" UUID="17929f56-eb2a-447c-a4f1-e46a7f59edef" autoIncrement="true" defaultValue="nextval(&apos;pri.service_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>軟體服務PK</remarks>
+       </column>
+       <column id="COL101" populated="true" UUID="6d849467-2d0e-4cc9-b7c3-7a745b0ead0c" autoIncrement="false" defaultValue="" name="provider_id" nullable="1" physicalName="provider_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>軟體服務提供者FK</remarks>
+       </column>
+       <column id="COL102" populated="true" UUID="6aa5d14b-1cf4-4440-ac01-c4391987d183" autoIncrement="false" defaultValue="" name="service_name" nullable="1" physicalName="service_name" precision="60" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>軟體服務名稱</remarks>
+       </column>
+       <column id="COL103" populated="true" UUID="4bdf9a68-7dba-45d3-a6be-374ba8a17bff" autoIncrement="false" defaultValue="" name="service_url" nullable="1" physicalName="service_url" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>軟體服務URL</remarks>
+       </column>
+       <column id="COL104" populated="true" UUID="f251dc0d-c1da-4f37-a462-d81f3c0a691d" autoIncrement="false" defaultValue="" name="parameter_description" nullable="1" physicalName="parameter_description" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>參數說明</remarks>
+       </column>
+       <column id="COL105" populated="true" UUID="549fbf91-ee19-4cc5-96b1-1a9e8d991d09" autoIncrement="false" defaultValue="" name="service_key" nullable="1" physicalName="service_key" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>代表鍵值</remarks>
+       </column>
+       <column id="COL106" populated="true" UUID="e9a660e8-2630-4c02-acf2-5b84705c0fb7" autoIncrement="false" defaultValue="" name="service_key_password" nullable="1" physicalName="service_key_password" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>連線密碼</remarks>
+       </column>
+       <column id="COL107" populated="true" UUID="0094cb58-f309-4dad-8f2a-272b04983f3f" autoIncrement="false" defaultValue="" name="connect_frequency" nullable="1" physicalName="connect_frequency" precision="2" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>連線頻率</remarks>
+       </column>
+       <column id="COL108" populated="true" UUID="b3946e7c-d005-495d-9dd0-7c48993a09ea" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL109" populated="true" UUID="623b97df-659a-4557-b266-a19bdb8eb5dc" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB993" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB992" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB994" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX110" populated="true" UUID="1796e746-0b6c-4e8c-8b97-3c349179c4e0" clustered="false" index-type="BTREE" name="service_pkey" physicalName="service_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC111" populated="true" UUID="c6dd0090-1b35-48c2-b976-60134495def4" ascendingOrDescending="UNSPECIFIED" column-ref="COL100" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+    </schema>
+    <schema id="SCH112" populated="false" UUID="86a413a0-f12e-40c1-ab6a-5e321ab9da5b" name="public" nativeTerm="schema" physicalName="public" >
+    </schema>
+    <schema id="SCH113" populated="true" UUID="91fba55e-84a9-4cb8-b52b-96af0d101352" name="shift" nativeTerm="schema" physicalName="shift" >
+     <table id="TAB114" populated="true" UUID="09a43357-faea-4dcb-b42f-fa443e4bec0f" name="daily_shift" objectType="TABLE" physicalName="daily_shift" >
+      <remarks>每日輪班表</remarks>
+      <folder id="FOLTAB1141" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL115" populated="true" UUID="0afb038f-f5b0-414f-ba39-caa4a126ad75" autoIncrement="true" defaultValue="nextval(&apos;shift.daily_shift_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>輪班區段表PK</remarks>
+       </column>
+       <column id="COL116" populated="true" UUID="c402d000-6feb-4363-9a43-e90490f45990" autoIncrement="false" defaultValue="" name="employee_no" nullable="1" physicalName="employee_no" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>員工工號</remarks>
+       </column>
+       <column id="COL117" populated="true" UUID="65f450b0-aff9-495f-b6d3-d5a6b8deec50" autoIncrement="false" defaultValue="" name="shift_date" nullable="1" physicalName="shift_date" precision="8" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>輪班日期</remarks>
+       </column>
+       <column id="COL118" populated="true" UUID="4f6123f7-96af-45fa-9ad6-dd3ab36ad359" autoIncrement="false" defaultValue="" name="shift_code" nullable="1" physicalName="shift_code" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>輪班代碼</remarks>
+       </column>
+       <column id="COL119" populated="true" UUID="1c940342-ea67-4fc2-8df0-0fa87b68f2ea" autoIncrement="false" defaultValue="" name="shift_type" nullable="1" physicalName="shift_type" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>輪班型態</remarks>
+       </column>
+       <column id="COL120" populated="true" UUID="86b1371e-5f30-4738-8ff1-ee5064322d19" autoIncrement="false" defaultValue="" name="counting_item1" nullable="1" physicalName="counting_item1" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>誤早餐</remarks>
+       </column>
+       <column id="COL121" populated="true" UUID="5327f2c6-5cae-40c1-ad51-7ff52f71aaa6" autoIncrement="false" defaultValue="" name="counting_item2" nullable="1" physicalName="counting_item2" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>誤晚餐</remarks>
+       </column>
+       <column id="COL122" populated="true" UUID="5817a649-eae5-4320-88dd-cbe4d4b753c2" autoIncrement="false" defaultValue="" name="counting_item3" nullable="1" physicalName="counting_item3" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>誤早車</remarks>
+       </column>
+       <column id="COL123" populated="true" UUID="f26cd726-3559-42c6-b8e0-91d6de57f520" autoIncrement="false" defaultValue="" name="counting_item4" nullable="1" physicalName="counting_item4" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>誤晚車</remarks>
+       </column>
+       <column id="COL124" populated="true" UUID="23b0c002-dc35-433d-8613-f50d3dc0b8a5" autoIncrement="false" defaultValue="" name="counting_item5" nullable="1" physicalName="counting_item5" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL125" populated="true" UUID="fdcf4c3a-6327-40ee-a04e-d13a03876915" autoIncrement="false" defaultValue="" name="counting_item6" nullable="1" physicalName="counting_item6" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL126" populated="true" UUID="920c39da-dae2-4806-82bd-d70bc7b9e277" autoIncrement="false" defaultValue="" name="counting_item7" nullable="1" physicalName="counting_item7" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL127" populated="true" UUID="7f7a0b8c-36bd-4565-a891-92d0ee86efda" autoIncrement="false" defaultValue="" name="counting_item8" nullable="1" physicalName="counting_item8" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL128" populated="true" UUID="15b22ac2-bdbd-4444-9fab-d49fa0e37ba6" autoIncrement="false" defaultValue="" name="operate_type" nullable="1" physicalName="operate_type" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL129" populated="true" UUID="8b7057f6-38bc-4bd3-81a7-b8b5a5b404cc" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL130" populated="true" UUID="c0d6295f-76f4-40e3-ae1b-793f8edab89d" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB1143" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB1142" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB1144" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX131" populated="true" UUID="40cf5e7c-5bf1-422a-b526-b763fe4aa6d2" clustered="false" index-type="BTREE" name="daily_shift_pkey" physicalName="daily_shift_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC132" populated="true" UUID="a0ba57b5-0a68-4215-bd1f-332b39649453" ascendingOrDescending="UNSPECIFIED" column-ref="COL115" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB133" populated="true" UUID="43a16693-39ce-462e-9d1b-993dcea8e501" name="duty_transition" objectType="TABLE" physicalName="duty_transition" >
+      <remarks>員工部門任職調動表</remarks>
+      <folder id="FOLTAB1331" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL134" populated="true" UUID="e98423aa-f71b-443c-b6e2-34d9c6dd8917" autoIncrement="true" defaultValue="nextval(&apos;shift.duty_transition_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>員工部門任職調動表PK</remarks>
+       </column>
+       <column id="COL135" populated="true" UUID="768ad11b-96b2-4a5f-9e29-518d2992a44c" autoIncrement="false" defaultValue="" name="employee_no" nullable="1" physicalName="employee_no" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>員工工號</remarks>
+       </column>
+       <column id="COL136" populated="true" UUID="604f832e-37f2-43bf-9e71-c6e209e1dbb8" autoIncrement="false" defaultValue="" name="duty_start" nullable="1" physicalName="duty_start" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+        <remarks>任職開始時間</remarks>
+       </column>
+       <column id="COL137" populated="true" UUID="a517aebf-9fa2-4c0f-ac38-e03260906d6a" autoIncrement="false" defaultValue="" name="duty_end" nullable="1" physicalName="duty_end" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+        <remarks>任職結束時間</remarks>
+       </column>
+       <column id="COL138" populated="true" UUID="865cf97e-27b5-41d5-a3e8-eab39e890131" autoIncrement="false" defaultValue="" name="note" nullable="1" physicalName="note" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>調動備註</remarks>
+       </column>
+       <column id="COL139" populated="true" UUID="d0fb6abf-b0da-46c4-bbfa-bded28580c3b" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL140" populated="true" UUID="cc57b79d-518d-4997-9451-3cb79672c95e" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB1333" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB1332" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB1334" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX141" populated="true" UUID="c228af62-446b-4284-9137-904d3696e1da" clustered="false" index-type="BTREE" name="duty_transition_pkey" physicalName="duty_transition_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC142" populated="true" UUID="4d9dbb7b-e360-4998-8018-ca01a9bd73e5" ascendingOrDescending="UNSPECIFIED" column-ref="COL134" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB143" populated="true" UUID="8e5b6445-d5b2-4f42-9252-7c476422b8d6" name="pattern" objectType="TABLE" physicalName="pattern" >
+      <remarks>輪班規律表</remarks>
+      <folder id="FOLTAB1431" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL144" populated="true" UUID="35243e63-8ed9-42d8-bec1-ef887514e81f" autoIncrement="true" defaultValue="nextval(&apos;shift.pattern_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>輪班規律表PK</remarks>
+       </column>
+       <column id="COL145" populated="true" UUID="431f9c06-7d28-42f3-8a1d-d98f4a7258d2" autoIncrement="false" defaultValue="" name="org_id" nullable="1" physicalName="org_id" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL146" populated="true" UUID="664ea882-dd71-47ce-a464-850de1cbd5ac" autoIncrement="false" defaultValue="" name="code_pattern" nullable="1" physicalName="code_pattern" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>輪班規律</remarks>
+       </column>
+       <column id="COL147" populated="true" UUID="903d2ca6-8ff2-4db8-81c0-29c4d36587e7" autoIncrement="false" defaultValue="" name="index_seq" nullable="1" physicalName="index_seq" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>計算索引-索引值</remarks>
+       </column>
+       <column id="COL148" populated="true" UUID="99b965ae-be45-4476-b3b7-9488bb675917" autoIncrement="false" defaultValue="" name="index_date" nullable="1" physicalName="index_date" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+        <remarks>計算索引-索引日</remarks>
+       </column>
+       <column id="COL149" populated="true" UUID="c052f0a7-a8ce-4a2e-a346-8f61919344c2" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL150" populated="true" UUID="f64022d5-2b6d-4f8d-9461-81e23e3041be" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB1433" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB1432" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB1434" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX151" populated="true" UUID="c4fc7b47-4136-4b41-953b-eacc07e312a1" clustered="false" index-type="BTREE" name="pattern_pkey" physicalName="pattern_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC152" populated="true" UUID="92c1ef0b-85f9-445c-93a5-474d5804fc77" ascendingOrDescending="UNSPECIFIED" column-ref="COL144" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB153" populated="true" UUID="f00f77f7-ed10-4107-820a-a7c9b2087c3c" name="shift_code" objectType="TABLE" physicalName="shift_code" >
+      <remarks>輪班代碼表</remarks>
+      <folder id="FOLTAB1531" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL154" populated="true" UUID="b3554446-91c1-4af1-9755-ffbfc7bdddc6" autoIncrement="true" defaultValue="nextval(&apos;shift.shift_code_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>輪班代碼表PK</remarks>
+       </column>
+       <column id="COL155" populated="true" UUID="5011ed49-0b3e-46b5-a2fa-c507816e79e7" autoIncrement="false" defaultValue="" name="code" nullable="1" physicalName="code" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>輪班代碼</remarks>
+       </column>
+       <column id="COL156" populated="true" UUID="36a639e1-d550-44aa-a483-e8bd2477779e" autoIncrement="false" defaultValue="" name="description" nullable="1" physicalName="description" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>輪班代碼說明</remarks>
+       </column>
+       <column id="COL157" populated="true" UUID="c7eb683e-26fd-4230-86dd-9f256dfc8670" autoIncrement="false" defaultValue="" name="shift_type" nullable="1" physicalName="shift_type" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>輪班代碼型態</remarks>
+       </column>
+       <column id="COL158" populated="true" UUID="c7f71c79-323a-41b2-a256-9c4e6653b464" autoIncrement="false" defaultValue="" name="counting_item1" nullable="1" physicalName="counting_item1" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>誤早餐</remarks>
+       </column>
+       <column id="COL159" populated="true" UUID="1eaedf71-d812-48d9-b4e6-612e9172ed8a" autoIncrement="false" defaultValue="" name="counting_item2" nullable="1" physicalName="counting_item2" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>誤晚餐</remarks>
+       </column>
+       <column id="COL160" populated="true" UUID="cc012814-db22-419b-ba08-91395dfa4276" autoIncrement="false" defaultValue="" name="counting_item3" nullable="1" physicalName="counting_item3" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>誤早車</remarks>
+       </column>
+       <column id="COL161" populated="true" UUID="74b5388c-7a3b-4c39-830f-d21a3461731a" autoIncrement="false" defaultValue="" name="counting_item4" nullable="1" physicalName="counting_item4" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>誤晚車</remarks>
+       </column>
+       <column id="COL162" populated="true" UUID="5833afe3-33a5-4df9-af65-c462709f37ec" autoIncrement="false" defaultValue="" name="counting_item5" nullable="1" physicalName="counting_item5" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL163" populated="true" UUID="6755785b-aeb8-4253-8fce-16256026c564" autoIncrement="false" defaultValue="" name="counting_item6" nullable="1" physicalName="counting_item6" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL164" populated="true" UUID="debd5c40-688a-45ab-a1d6-ec760ff03f5d" autoIncrement="false" defaultValue="" name="counting_item7" nullable="1" physicalName="counting_item7" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL165" populated="true" UUID="5e3d5133-fb54-4aa6-bc8d-d21163590088" autoIncrement="false" defaultValue="" name="counting_item8" nullable="1" physicalName="counting_item8" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL166" populated="true" UUID="ee42f3f2-bef9-4669-9dfd-8e9b106cf26d" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL167" populated="true" UUID="72ce7827-cbc5-44c0-9b95-5d41beb49ee2" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB1533" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB1532" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB1534" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX168" populated="true" UUID="933544ef-139f-48c1-8a91-ca8f273cec81" clustered="false" index-type="BTREE" name="shift_code_pkey" physicalName="shift_code_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC169" populated="true" UUID="4effb79f-0758-4fdb-82f8-a6699baef87a" ascendingOrDescending="UNSPECIFIED" column-ref="COL154" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB170" populated="true" UUID="a702fb6a-6bc6-4ae7-934c-b8bac33fe1db" name="shift_period" objectType="TABLE" physicalName="shift_period" >
+      <remarks>輪班區段表</remarks>
+      <folder id="FOLTAB1701" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL171" populated="true" UUID="787c9037-acfd-4ae5-ba0d-c323ceb1e2ee" autoIncrement="true" defaultValue="nextval(&apos;shift.shift_period_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>輪班區段表PK</remarks>
+       </column>
+       <column id="COL172" populated="true" UUID="728d3e8b-376e-459a-ac71-5ee5f957bcab" autoIncrement="false" defaultValue="" name="shift_code_id" nullable="1" physicalName="shift_code_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL173" populated="true" UUID="851780e3-963a-4b3e-bf6e-b2100f8f8917" autoIncrement="false" defaultValue="" name="period_start" nullable="1" physicalName="period_start" precision="4" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>區段型態</remarks>
+       </column>
+       <column id="COL174" populated="true" UUID="71cd5ff5-623b-497d-bde1-aa411fb8ab8d" autoIncrement="false" defaultValue="" name="period_end" nullable="1" physicalName="period_end" precision="4" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>區段結束時間</remarks>
+       </column>
+       <column id="COL175" populated="true" UUID="37ce938d-ffee-42e4-a261-bded6cbc2211" autoIncrement="false" defaultValue="" name="period_type" nullable="1" physicalName="period_type" precision="1" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL176" populated="true" UUID="9ceea874-5071-4dfb-98ed-7503e150f778" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL177" populated="true" UUID="7dba11ef-bc95-4424-8d6b-4567aa9ebf7b" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB1703" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB1702" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB1704" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX178" populated="true" UUID="d27a7a58-afe7-4947-b7d1-01ac93318339" clustered="false" index-type="BTREE" name="shift_period_pkey" physicalName="shift_period_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC179" populated="true" UUID="019a313c-8598-4011-b6e8-2cc079c76bcb" ascendingOrDescending="UNSPECIFIED" column-ref="COL171" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+    </schema>
+    <schema id="SCH180" populated="true" UUID="28a510dc-0777-4410-9431-c25199e37e8c" name="site_work" nativeTerm="schema" physicalName="site_work" >
+     <table id="TAB181" populated="true" UUID="496f2df9-8aff-4bcc-acc7-27063494d896" name="work_assign" objectType="TABLE" physicalName="work_assign" >
+      <remarks>工作派分表</remarks>
+      <folder id="FOLTAB1811" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL182" populated="true" UUID="2b6b9007-d7c4-4913-8e2c-1634cd4d3b57" autoIncrement="true" defaultValue="nextval(&apos;site_work.work_assign_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>工作派分表PK</remarks>
+       </column>
+       <column id="COL183" populated="true" UUID="f08aa311-6179-4411-93cd-0edac1fa6bff" autoIncrement="false" defaultValue="" name="assign_date" nullable="1" physicalName="assign_date" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+        <remarks>派分日期</remarks>
+       </column>
+       <column id="COL184" populated="true" UUID="d2722b04-5ac7-4369-86e2-db1d1dabd3c9" autoIncrement="false" defaultValue="" name="assign_criteria_1" nullable="1" physicalName="assign_criteria_1" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>派分條件一</remarks>
+       </column>
+       <column id="COL185" populated="true" UUID="29e6d721-ea6b-49d4-b941-42bc7e522329" autoIncrement="false" defaultValue="" name="assign_criteria_2" nullable="1" physicalName="assign_criteria_2" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>派分條件二</remarks>
+       </column>
+       <column id="COL186" populated="true" UUID="c2b61a14-ea7e-484d-896d-1f20ea5767f4" autoIncrement="false" defaultValue="" name="assign_criteria_3" nullable="1" physicalName="assign_criteria_3" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>派分條件三</remarks>
+       </column>
+       <column id="COL187" populated="true" UUID="7e6a8c66-7bdb-47df-a047-87270ae0c752" autoIncrement="false" defaultValue="" name="assign_criteria_4" nullable="1" physicalName="assign_criteria_4" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>派分條件四</remarks>
+       </column>
+       <column id="COL188" populated="true" UUID="57bce775-5408-4556-87a1-bb1727e9e952" autoIncrement="false" defaultValue="" name="assign_criteria_5" nullable="1" physicalName="assign_criteria_5" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>派分條件五</remarks>
+       </column>
+       <column id="COL189" populated="true" UUID="8e4f09f2-19e1-46a8-9487-839d83d1d747" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL190" populated="true" UUID="ca1f9ec8-c6af-4abe-af3d-89cee4449040" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB1813" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB1812" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB1814" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX191" populated="true" UUID="0d49383b-bdc8-46ca-b52b-70f6bd6691a2" clustered="false" index-type="BTREE" name="work_assign_pkey" physicalName="work_assign_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC192" populated="true" UUID="93768435-35cc-4aac-9d83-201abc28cc7d" ascendingOrDescending="UNSPECIFIED" column-ref="COL182" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB193" populated="true" UUID="e46c7a9b-28bd-4760-b9dd-e1d449099349" name="work_group" objectType="TABLE" physicalName="work_group" >
+      <remarks>工作派分群組表</remarks>
+      <folder id="FOLTAB1931" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL194" populated="true" UUID="97db63d7-10aa-4b86-b02b-909b0d522a01" autoIncrement="true" defaultValue="nextval(&apos;site_work.work_group_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>工作派分群組表PK</remarks>
+       </column>
+       <column id="COL195" populated="true" UUID="765f4ac5-d37f-4b85-b893-4040c36feef4" autoIncrement="false" defaultValue="" name="work_assign_id" nullable="1" physicalName="work_assign_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL196" populated="true" UUID="07f2bdd2-fcf1-41a6-b91d-d77c7259bbde" autoIncrement="false" defaultValue="" name="work_group_name" nullable="1" physicalName="work_group_name" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>群組名稱</remarks>
+       </column>
+       <column id="COL197" populated="true" UUID="94ec660b-e5d2-488b-9855-a0c3f55f3ab5" autoIncrement="false" defaultValue="" name="work_group_description" nullable="1" physicalName="work_group_description" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>群組說明</remarks>
+       </column>
+       <column id="COL198" populated="true" UUID="563f412b-fbb3-42f1-8abc-e03ce01debaf" autoIncrement="false" defaultValue="" name="work_group_criteria1" nullable="1" physicalName="work_group_criteria1" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>群組條件一</remarks>
+       </column>
+       <column id="COL199" populated="true" UUID="ed05f6a0-61ac-48cd-8ae8-2ab1dc941d28" autoIncrement="false" defaultValue="" name="work_group_criteria2" nullable="1" physicalName="work_group_criteria2" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>群組條件二</remarks>
+       </column>
+       <column id="COL200" populated="true" UUID="5a1b5474-3c54-4f1f-9276-fd817e5435ed" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL201" populated="true" UUID="f6da6f05-5cfb-497b-956b-6eb8144bc353" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB1933" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB1932" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB1934" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX202" populated="true" UUID="256e37ac-0cb1-41e1-ab3c-41d4ed941440" clustered="false" index-type="BTREE" name="work_group_pkey" physicalName="work_group_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC203" populated="true" UUID="22523318-2751-4a9e-a6dc-f09ad189de3c" ascendingOrDescending="UNSPECIFIED" column-ref="COL194" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB204" populated="true" UUID="5b55563a-3011-4ffc-8af1-155b5efa1b59" name="work_group_member" objectType="TABLE" physicalName="work_group_member" >
+      <remarks>工作派分群組成員表</remarks>
+      <folder id="FOLTAB2041" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL205" populated="true" UUID="733c8d53-32e0-49de-bfc4-acc493dbe425" autoIncrement="true" defaultValue="nextval(&apos;site_work.work_group_member_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>工作派分群組成員表PK</remarks>
+       </column>
+       <column id="COL206" populated="true" UUID="81d3b702-301c-4526-9e53-d0f3067e8254" autoIncrement="false" defaultValue="" name="work_group_id" nullable="1" physicalName="work_group_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>工作分派群組ID FK</remarks>
+       </column>
+       <column id="COL207" populated="true" UUID="cfb756af-4683-47b3-8fec-ece7d2e6a1ca" autoIncrement="false" defaultValue="" name="employee_no" nullable="1" physicalName="employee_no" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>員工工號</remarks>
+       </column>
+       <column id="COL208" populated="true" UUID="cceafb25-8369-48fd-8a75-734cf2547a91" autoIncrement="false" defaultValue="" name="employee_name" nullable="1" physicalName="employee_name" precision="60" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>員工姓名</remarks>
+       </column>
+       <column id="COL209" populated="true" UUID="50e9e235-ac7e-4c40-b03f-b5189c25faa5" autoIncrement="false" defaultValue="" name="member_criteria1" nullable="1" physicalName="member_criteria1" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>成員條件一</remarks>
+       </column>
+       <column id="COL210" populated="true" UUID="ce9e3d0d-8fd7-439d-a297-99a5c656e62a" autoIncrement="false" defaultValue="" name="member_criteria2" nullable="1" physicalName="member_criteria2" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>成員條件二</remarks>
+       </column>
+       <column id="COL211" populated="true" UUID="e582090c-7808-47ff-bfad-c774c37afbd2" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL212" populated="true" UUID="6f1a8f50-01a6-4b16-84ce-959e016d5700" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB2043" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB2042" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB2044" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX213" populated="true" UUID="3e8305b8-4dbd-46e1-a5a2-413f0a96f865" clustered="false" index-type="BTREE" name="work_group_member_pkey" physicalName="work_group_member_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC214" populated="true" UUID="b10b262d-9db5-4949-8851-82bedc14ecbb" ascendingOrDescending="UNSPECIFIED" column-ref="COL205" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB215" populated="true" UUID="552f02d4-bd38-4cf1-befc-1b0f49508564" name="work_group_working_item" objectType="TABLE" physicalName="work_group_working_item" >
+      <remarks>工作派分群組工項表</remarks>
+      <folder id="FOLTAB2151" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL216" populated="true" UUID="1f088311-857d-4259-b35f-eb92e594ba5c" autoIncrement="true" defaultValue="nextval(&apos;site_work.work_group_working_item_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>工作派分群組工項表PK</remarks>
+       </column>
+       <column id="COL217" populated="true" UUID="614e3242-8814-43cf-b2dd-ee7ef4bf35ed" autoIncrement="false" defaultValue="" name="work_group_id" nullable="1" physicalName="work_group_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>工作分派群組ID FK</remarks>
+       </column>
+       <column id="COL218" populated="true" UUID="9b641cab-ca4b-48df-af0a-514efbc146c3" autoIncrement="false" defaultValue="" name="item_code" nullable="1" physicalName="item_code" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目代碼</remarks>
+       </column>
+       <column id="COL219" populated="true" UUID="5ad46fa5-49b5-4aa7-a54a-e77ce462ae9c" autoIncrement="false" defaultValue="" name="item_description" nullable="1" physicalName="item_description" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目說明</remarks>
+       </column>
+       <column id="COL220" populated="true" UUID="aeb953c8-71e8-470a-9626-5ea9bb5c16ce" autoIncrement="false" defaultValue="" name="item_criteria1" nullable="1" physicalName="item_criteria1" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目條件一</remarks>
+       </column>
+       <column id="COL221" populated="true" UUID="0c04071f-58cd-49c9-bf62-0511f7eca952" autoIncrement="false" defaultValue="" name="item_criteria2" nullable="1" physicalName="item_criteria2" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目條件二</remarks>
+       </column>
+       <column id="COL222" populated="true" UUID="3494120c-885c-440c-9260-b3906ff8b9ab" autoIncrement="false" defaultValue="" name="item_criteria3" nullable="1" physicalName="item_criteria3" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目條件三</remarks>
+       </column>
+       <column id="COL223" populated="true" UUID="01b38e29-ebb5-42a4-9e2e-8b9d522c77dc" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL224" populated="true" UUID="d5418986-d897-49c7-b287-4d7780c7e277" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB2153" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB2152" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB2154" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX225" populated="true" UUID="ca997c05-f7b0-48f3-b005-816d97d806bd" clustered="false" index-type="BTREE" name="work_group_working_item_pkey" physicalName="work_group_working_item_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC226" populated="true" UUID="6871b302-d7a6-47ce-90cb-fd0654731b29" ascendingOrDescending="UNSPECIFIED" column-ref="COL216" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB227" populated="true" UUID="41e3b90a-e191-4bfe-898f-434f6fd3a1fb" name="working_record" objectType="TABLE" physicalName="working_record" >
+      <remarks>工作紀錄表</remarks>
+      <folder id="FOLTAB2271" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL228" populated="true" UUID="9a3ee0b5-49dc-4d65-b06e-9a0d1967d8c8" autoIncrement="true" defaultValue="nextval(&apos;site_work.working_record_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL229" populated="true" UUID="b5cd4eec-360e-449c-8f2d-b09759a53533" autoIncrement="false" defaultValue="" name="employee_no" nullable="1" physicalName="employee_no" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL230" populated="true" UUID="6f311ed9-d925-4fe8-9427-886972198206" autoIncrement="false" defaultValue="" name="employee_name" nullable="1" physicalName="employee_name" precision="60" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL231" populated="true" UUID="8cb3a692-3c3b-47fd-861c-6de11f4e4fb2" autoIncrement="false" defaultValue="" name="record_start" nullable="1" physicalName="record_start" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks></remarks>
+       </column>
+       <column id="COL232" populated="true" UUID="49e6d04c-adca-4344-a62a-532e026d9f3e" autoIncrement="false" defaultValue="" name="record_end" nullable="1" physicalName="record_end" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks></remarks>
+       </column>
+       <column id="COL233" populated="true" UUID="a4d7e2cc-7407-4a17-a78c-cc48453964dc" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks></remarks>
+       </column>
+       <column id="COL234" populated="true" UUID="a533259e-9702-4ffa-a841-2cc53e67829e" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks></remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB2273" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB2272" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB2274" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX235" populated="true" UUID="259cf3eb-577d-4926-b414-15d6561e5b26" clustered="false" index-type="BTREE" name="working_record_pkey" physicalName="working_record_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC236" populated="true" UUID="02d4827f-6a98-44bf-a0ee-64ddebeac26b" ascendingOrDescending="UNSPECIFIED" column-ref="COL228" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+    </schema>
+    <schema id="SCH237" populated="true" UUID="82395eb9-e063-4710-a4aa-61ef9a67ab50" name="work_plan" nativeTerm="schema" physicalName="work_plan" >
+     <table id="TAB238" populated="true" UUID="54f0abee-c4db-400b-bff5-813ed446c695" name="package_break_down" objectType="TABLE" physicalName="package_break_down" >
+      <remarks>工項包拆解表</remarks>
+      <folder id="FOLTAB2381" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL239" populated="true" UUID="9de995e3-66db-4b28-8819-af92efdb2ecd" autoIncrement="true" defaultValue="nextval(&apos;work_plan.package_break_down_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>工項包拆解表PK</remarks>
+       </column>
+       <column id="COL240" populated="true" UUID="34f43c20-cf97-4ca8-96ee-8a48d8fc5a2c" autoIncrement="false" name="parent_id" nullable="1" physicalName="parent_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>父工項包拆解表ID FK</remarks>
+       </column>
+       <column id="COL241" populated="true" UUID="17db87aa-eb97-4653-8e28-f822e990f055" autoIncrement="false" name="package_id" nullable="1" physicalName="package_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>工項包ID FK</remarks>
+       </column>
+       <column id="COL242" populated="true" UUID="50cdeae0-4311-4698-8ac3-316f05b34de4" autoIncrement="false" name="item_name" nullable="1" physicalName="item_name" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目名稱</remarks>
+       </column>
+       <column id="COL243" populated="true" UUID="da35634b-50a0-4c3f-b291-ccc350414b2a" autoIncrement="false" name="item_description" nullable="1" physicalName="item_description" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目說明</remarks>
+       </column>
+       <column id="COL244" populated="true" UUID="88cbcc1b-d1e1-4058-ba7f-ed8fc1eb9665" autoIncrement="false" name="item_criteria1" nullable="1" physicalName="item_criteria1" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目條件一</remarks>
+       </column>
+       <column id="COL245" populated="true" UUID="2574b900-ef51-4a4a-afd7-bfe3aaa095c5" autoIncrement="false" name="item_criteria2" nullable="1" physicalName="item_criteria2" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目條件二</remarks>
+       </column>
+       <column id="COL246" populated="true" UUID="b058e540-4365-44f2-b183-b45456f41f8f" autoIncrement="false" name="item_criteria3" nullable="1" physicalName="item_criteria3" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目條件三</remarks>
+       </column>
+       <column id="COL247" populated="true" UUID="444965f7-800a-4efd-ae70-3ab0d232ea0c" autoIncrement="false" name="item_criteria4" nullable="1" physicalName="item_criteria4" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目條件四</remarks>
+       </column>
+       <column id="COL248" populated="true" UUID="adc65541-19d7-47ee-a5fa-3a30614e9a79" autoIncrement="false" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL249" populated="true" UUID="c66ef257-8076-4223-8f8a-dbb77511c301" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB2383" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB2382" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB2384" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX250" populated="true" UUID="7f0f68e1-99b6-4679-b19b-a52319919981" clustered="false" index-type="BTREE" name="package_break_down_pkey" physicalName="package_break_down_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC251" populated="true" UUID="551db09f-c4c1-4e1e-9c94-9af20a2a2cbf" ascendingOrDescending="UNSPECIFIED" column-ref="COL239" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB252" populated="true" UUID="be843ff2-7ea5-4fc2-ade2-0034918f15e7" name="project_break_down" objectType="TABLE" physicalName="project_break_down" >
+      <remarks>專案拆解表</remarks>
+      <folder id="FOLTAB2521" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL253" populated="true" UUID="b5ae0ffe-7b39-499c-917e-4748c009c269" autoIncrement="true" defaultValue="nextval(&apos;work_plan.project_break_down_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>專案拆解表PK</remarks>
+       </column>
+       <column id="COL254" populated="true" UUID="b8b0b8d7-3b24-4219-bf3d-e98148f5146f" autoIncrement="false" name="parent_id" nullable="1" physicalName="parent_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>父專案拆解ID FK</remarks>
+       </column>
+       <column id="COL255" populated="true" UUID="f8462b0e-b506-4daf-8cd2-e4020ebfbc16" autoIncrement="false" name="item_id" nullable="1" physicalName="item_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks></remarks>
+       </column>
+       <column id="COL256" populated="true" UUID="5c1fe924-3838-490c-884a-f5ffb0f44d5b" autoIncrement="false" name="item_name" nullable="1" physicalName="item_name" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目名稱</remarks>
+       </column>
+       <column id="COL257" populated="true" UUID="c6bce19f-a006-4b43-96ef-1472575733c1" autoIncrement="false" name="item_description" nullable="1" physicalName="item_description" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目說明</remarks>
+       </column>
+       <column id="COL258" populated="true" UUID="4ba4d05d-c740-4905-a18e-439282edd12e" autoIncrement="false" name="item_criteria1" nullable="1" physicalName="item_criteria1" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目條件一</remarks>
+       </column>
+       <column id="COL259" populated="true" UUID="61302f32-b4d6-4129-aa91-71b6c9efcf64" autoIncrement="false" name="item_criteria2" nullable="1" physicalName="item_criteria2" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目條件二</remarks>
+       </column>
+       <column id="COL260" populated="true" UUID="72665cb1-c195-4497-822c-df8be6194511" autoIncrement="false" name="item_criteria3" nullable="1" physicalName="item_criteria3" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目條件三</remarks>
+       </column>
+       <column id="COL261" populated="true" UUID="58087266-e5e6-46da-bb71-d57e4683ded5" autoIncrement="false" name="item_criteria4" nullable="1" physicalName="item_criteria4" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>項目條件四</remarks>
+       </column>
+       <column id="COL262" populated="true" UUID="deec2452-7725-4358-8fca-5bd7f711058d" autoIncrement="false" name="estimate_amount" nullable="1" physicalName="estimate_amount" precision="18" referenceCount="1" scale="6" sourceDataTypeName="numeric" type="2" >
+        <remarks>預估數量</remarks>
+       </column>
+       <column id="COL263" populated="true" UUID="ded7f928-4823-49d5-8f46-a953a27db08e" autoIncrement="false" name="measure_unit" nullable="1" physicalName="measure_unit" precision="5" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>單位</remarks>
+       </column>
+       <column id="COL264" populated="true" UUID="3d95ccb5-a8aa-4468-908a-eb57966fdca3" autoIncrement="false" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL265" populated="true" UUID="89b1b774-ec37-4e0f-b8fd-d270ad83ca69" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB2523" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB2522" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB2524" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX266" populated="true" UUID="1940617e-d41e-4eb6-bf7b-4a33235f9ffe" clustered="false" index-type="BTREE" name="project_break_down_pkey" physicalName="project_break_down_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC267" populated="true" UUID="329a5d5d-d3ef-4f02-9831-c37fd0535a17" ascendingOrDescending="UNSPECIFIED" column-ref="COL253" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB268" populated="true" UUID="30408ccf-5424-4aae-a138-7370907ba94d" name="site_project" objectType="TABLE" physicalName="site_project" >
+      <remarks>專案工地表</remarks>
+      <folder id="FOLTAB2681" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL269" populated="true" UUID="b8818cbc-82f2-474b-b892-f49d5e1c94fb" autoIncrement="true" defaultValue="nextval(&apos;work_plan.site_project_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>專案工地PK</remarks>
+       </column>
+       <column id="COL270" populated="true" UUID="30ecd29c-512e-4391-a1b8-89d015534f91" autoIncrement="false" name="working_package_id" nullable="1" physicalName="working_package_id" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+        <remarks>工項包 FK</remarks>
+       </column>
+       <column id="COL271" populated="true" UUID="86d959b6-171e-41c2-9227-dfea097d881f" autoIncrement="false" name="project_name" nullable="1" physicalName="project_name" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>專案名稱</remarks>
+       </column>
+       <column id="COL272" populated="true" UUID="bedb4faf-b168-4312-b5e2-44e0b6d1bb23" autoIncrement="false" name="project_status" nullable="1" physicalName="project_status" precision="5" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>專案狀態</remarks>
+       </column>
+       <column id="COL273" populated="true" UUID="261e2a0a-70d1-44ec-a0ee-a240f6802cd4" autoIncrement="false" name="project_address" nullable="1" physicalName="project_address" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>專案位址</remarks>
+       </column>
+       <column id="COL274" populated="true" UUID="4e180baa-5705-40df-a440-9053ff318ece" autoIncrement="false" name="owner" nullable="1" physicalName="owner" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>業主</remarks>
+       </column>
+       <column id="COL275" populated="true" UUID="3f7ed882-7af2-4815-b460-056c0f31ca4a" autoIncrement="false" name="contactor" nullable="1" physicalName="contactor" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>聯絡人</remarks>
+       </column>
+       <column id="COL276" populated="true" UUID="24800b96-e4ee-425a-b182-dcf060bd0149" autoIncrement="false" name="contact_mobile" nullable="1" physicalName="contact_mobile" precision="40" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>聯絡手機</remarks>
+       </column>
+       <column id="COL277" populated="true" UUID="4626a253-862a-4bc6-be6e-c8b19ab4247f" autoIncrement="false" name="note1" nullable="1" physicalName="note1" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>備註一</remarks>
+       </column>
+       <column id="COL278" populated="true" UUID="f5f5eeb4-158e-459a-a7ce-ea0e375a0c7b" autoIncrement="false" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL279" populated="true" UUID="47f9e4b4-6421-4181-bd5b-4e02aa5abc72" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB2683" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB2682" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB2684" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX280" populated="true" UUID="de06fd0a-f78e-41be-b4f5-e4de9c9058ae" clustered="false" index-type="BTREE" name="site_project_pkey" physicalName="site_project_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC281" populated="true" UUID="82e56606-9f54-4e75-85b5-490a68d7fe01" ascendingOrDescending="UNSPECIFIED" column-ref="COL269" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+     <table id="TAB282" populated="true" UUID="e723cebe-e8d1-4f2a-b91b-b67b0ae5098b" name="working_package" objectType="TABLE" physicalName="working_package" >
+      <remarks>工項包表</remarks>
+      <folder id="FOLTAB2821" populated="true" name="Columns" physicalName="Columns" type="1">
+       <column id="COL283" populated="true" UUID="8de7c944-9ca8-48da-98e4-da3bbd5779f2" autoIncrement="true" defaultValue="nextval(&apos;work_plan.working_package_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
+        <remarks>工項包PK</remarks>
+       </column>
+       <column id="COL284" populated="true" UUID="edec7025-118c-4735-8959-cdc5a40687d5" autoIncrement="false" name="package_name" nullable="1" physicalName="package_name" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>工項包名稱</remarks>
+       </column>
+       <column id="COL285" populated="true" UUID="153fe4d6-1457-4ece-a736-bfb54adae520" autoIncrement="false" name="package_description" nullable="1" physicalName="package_description" precision="255" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>工項包說明</remarks>
+       </column>
+       <column id="COL286" populated="true" UUID="d921458d-2322-4019-961c-57d52b40a393" autoIncrement="false" name="package_criteria1" nullable="1" physicalName="package_criteria1" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>工項包條件一</remarks>
+       </column>
+       <column id="COL287" populated="true" UUID="7494348f-b128-4146-930f-f04fd7589a93" autoIncrement="false" name="package_criteria2" nullable="1" physicalName="package_criteria2" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>工項包條件二</remarks>
+       </column>
+       <column id="COL288" populated="true" UUID="a257796b-4d74-4f55-8bb6-183b5dbc19b9" autoIncrement="false" name="package_criteria3" nullable="1" physicalName="package_criteria3" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>工項包條件三</remarks>
+       </column>
+       <column id="COL289" populated="true" UUID="40097765-a623-4f79-8a93-005fb7613fe7" autoIncrement="false" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+        <remarks>操作者</remarks>
+       </column>
+       <column id="COL290" populated="true" UUID="79ef9dd5-5f06-41ab-803a-a8d7b2e726ee" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="29" referenceCount="1" scale="6" sourceDataTypeName="timestamp" type="93" >
+        <remarks>操作時間</remarks>
+       </column>
+       </folder>
+       <folder id="FOLTAB2823" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+       </folder>
+       <folder id="FOLTAB2822" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+       </folder>
+       <folder id="FOLTAB2824" populated="true" name="Indices" physicalName="Indices" type="4">
+       <index id="IDX291" populated="true" UUID="2980a701-76e5-42fd-a1a6-8595ca25480b" clustered="false" index-type="BTREE" name="working_package_pkey" physicalName="working_package_pkey" primaryKeyIndex="true" unique="true" >
+        <index-column id="IDC292" populated="true" UUID="05031501-831e-429b-8bc9-5cd4f37156c7" ascendingOrDescending="UNSPECIFIED" column-ref="COL283" name="id" physicalName="id" />
+       </index>
+      </folder>
+     </table>
+    </schema>
+   </catalog>
+   <relationships>
+    <relationship id="REL293" populated="true" UUID="f0bb5cc8-6922-4794-825e-34facb23e204" deferrability="7" deleteRule="3" fk-table-ref="TAB41" fkCardinality="7" identifying="false" name="duty_user_id_fkey" physicalName="duty_user_id_fkey" pk-table-ref="TAB6" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP294" populated="true" UUID="ced6f26a-de11-4666-8a25-bf871788fb03" fk-column-ref="COL43" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL7" />
+    </relationship>
+    <relationship id="REL295" populated="true" UUID="609d178a-acee-4907-9d6d-588372503752" deferrability="7" deleteRule="3" fk-table-ref="TAB32" fkCardinality="7" identifying="false" name="data_auth_auth_group_id_fkey" physicalName="data_auth_auth_group_id_fkey" pk-table-ref="TAB21" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP296" populated="true" UUID="6e3cbdd4-c29c-46e6-9b77-b34368e3b909" fk-column-ref="COL34" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL22" />
+    </relationship>
+    <relationship id="REL297" populated="true" UUID="dea29def-9f8d-424e-b434-73c62b885646" deferrability="7" deleteRule="3" fk-table-ref="TAB41" fkCardinality="7" identifying="false" name="duty_auth_group_id_fkey" physicalName="duty_auth_group_id_fkey" pk-table-ref="TAB21" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP298" populated="true" UUID="88907748-b479-4adc-b410-3b5bedabb9ef" fk-column-ref="COL44" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL22" />
+    </relationship>
+    <relationship id="REL299" populated="true" UUID="da9d2211-bf64-4f87-803c-768dfdb15e05" deferrability="7" deleteRule="3" fk-table-ref="TAB68" fkCardinality="7" identifying="false" name="fun_auth_auth_group_id_fkey" physicalName="fun_auth_auth_group_id_fkey" pk-table-ref="TAB21" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP300" populated="true" UUID="e26ffd81-421c-46e2-be21-7a748d5600a2" fk-column-ref="COL70" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL22" />
+    </relationship>
+    <relationship id="REL301" populated="true" UUID="f9ec4910-a97f-4048-b85a-a165d676b5c7" deferrability="7" deleteRule="3" fk-table-ref="TAB51" fkCardinality="7" identifying="false" name="fun_parent_fun_id_fkey" physicalName="fun_parent_fun_id_fkey" pk-table-ref="TAB51" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP302" populated="true" UUID="88433d23-8216-4f68-9f9c-d3988d6fa123" fk-column-ref="COL53" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL52" />
+    </relationship>
+    <relationship id="REL303" populated="true" UUID="392a819c-d143-4afd-b811-d67afb5fde57" deferrability="7" deleteRule="3" fk-table-ref="TAB68" fkCardinality="7" identifying="false" name="fun_auth_fun_id_fkey" physicalName="fun_auth_fun_id_fkey" pk-table-ref="TAB51" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP304" populated="true" UUID="112e8689-c3dc-4a47-8070-408fe57c888f" fk-column-ref="COL71" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL52" />
+    </relationship>
+    <relationship id="REL305" populated="true" UUID="db1b376f-4f42-4890-a591-04c675d92840" deferrability="7" deleteRule="3" fk-table-ref="TAB32" fkCardinality="7" identifying="false" name="data_auth_org_id_fkey" physicalName="data_auth_org_id_fkey" pk-table-ref="TAB77" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP306" populated="true" UUID="db94fa00-c000-4d91-8025-3989d4beb49d" fk-column-ref="COL35" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL78" />
+    </relationship>
+    <relationship id="REL307" populated="true" UUID="c2faa999-6cea-4b02-931a-b6815b3a8715" deferrability="7" deleteRule="3" fk-table-ref="TAB77" fkCardinality="7" identifying="false" name="org_parent_org_id_fkey" physicalName="org_parent_org_id_fkey" pk-table-ref="TAB77" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP308" populated="true" UUID="2daa89e8-9a52-482f-97cc-cbe2ebe582c1" fk-column-ref="COL79" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL78" />
+    </relationship>
+    <relationship id="REL309" populated="true" UUID="c2309fb0-c86b-4008-8ae4-b79e3d5a5f59" deferrability="7" deleteRule="3" fk-table-ref="TAB99" fkCardinality="7" identifying="false" name="service_provider_id_fkey" physicalName="service_provider_id_fkey" pk-table-ref="TAB77" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP310" populated="true" UUID="9562f6b0-31a6-44a8-a698-f2019097a169" fk-column-ref="COL101" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL78" />
+    </relationship>
+    <relationship id="REL311" populated="true" UUID="36e25f26-28e0-4650-9140-5d1b6c3a970f" deferrability="7" deleteRule="3" fk-table-ref="TAB21" fkCardinality="7" identifying="false" name="auth_group_belong_org_id_fkey" physicalName="auth_group_belong_org_id_fkey" pk-table-ref="TAB77" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP312" populated="true" UUID="563138e0-4517-4655-b5ea-b7774a7d4d79" fk-column-ref="COL29" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL78" />
+    </relationship>
+    <relationship id="REL313" populated="true" UUID="c933ae5b-3a21-4a94-818d-7589f080577a" deferrability="7" deleteRule="3" fk-table-ref="TAB51" fkCardinality="7" identifying="false" name="fun_service_id_fkey" physicalName="fun_service_id_fkey" pk-table-ref="TAB99" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP314" populated="true" UUID="d1e4d0ca-b12b-4a95-b558-af9d69ec5a5b" fk-column-ref="COL54" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL100" />
+    </relationship>
+    <relationship id="REL315" populated="true" UUID="ebd1b303-2d4c-46a4-961c-15102a904cf2" deferrability="7" deleteRule="3" fk-table-ref="TAB170" fkCardinality="7" identifying="false" name="shift_period_shift_code_id_fkey" physicalName="shift_period_shift_code_id_fkey" pk-table-ref="TAB153" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP316" populated="true" UUID="120c61be-bffa-4665-af10-3ebf3fdc35c6" fk-column-ref="COL172" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL154" />
+    </relationship>
+    <relationship id="REL317" populated="true" UUID="a70de8f0-8294-42c0-abbf-1dc16bf36b1a" deferrability="7" deleteRule="3" fk-table-ref="TAB193" fkCardinality="7" identifying="false" name="work_group_work_assign_id_fkey" physicalName="work_group_work_assign_id_fkey" pk-table-ref="TAB181" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP318" populated="true" UUID="1e3a8d82-3372-4bd3-a42f-90901150d55e" fk-column-ref="COL195" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL182" />
+    </relationship>
+    <relationship id="REL319" populated="true" UUID="91c1e6d9-ea9d-490d-a353-86bc83b57376" deferrability="7" deleteRule="3" fk-table-ref="TAB204" fkCardinality="7" identifying="false" name="work_group_member_work_group_id_fkey" physicalName="work_group_member_work_group_id_fkey" pk-table-ref="TAB193" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP320" populated="true" UUID="5d7d3810-06bd-42fd-965f-b6cb57857d31" fk-column-ref="COL206" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL194" />
+    </relationship>
+    <relationship id="REL321" populated="true" UUID="49cea553-066c-4e41-9c1e-c1fbdfa84379" deferrability="7" deleteRule="3" fk-table-ref="TAB215" fkCardinality="7" identifying="false" name="work_group_working_item_work_group_id_fkey" physicalName="work_group_working_item_work_group_id_fkey" pk-table-ref="TAB193" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP322" populated="true" UUID="99ba649f-8134-42d7-82e7-48c048d2a7dd" fk-column-ref="COL217" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL194" />
+    </relationship>
+    <relationship id="REL323" populated="true" UUID="cbfa5907-22ba-4dbd-9b9f-24dda862a1e3" deferrability="7" deleteRule="3" fk-table-ref="TAB238" fkCardinality="7" identifying="false" name="package_break_down_parent_id_fkey" physicalName="package_break_down_parent_id_fkey" pk-table-ref="TAB238" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP324" populated="true" UUID="facacb15-62e4-4fc1-a692-5705184506bc" fk-column-ref="COL240" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL239" />
+    </relationship>
+    <relationship id="REL325" populated="true" UUID="e199533a-c7d4-4165-80c2-30b5c1aa7474" deferrability="7" deleteRule="3" fk-table-ref="TAB252" fkCardinality="7" identifying="false" name="project_break_down_item_id_fkey" physicalName="project_break_down_item_id_fkey" pk-table-ref="TAB238" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP326" populated="true" UUID="9437720d-3c03-46fb-9dd8-bde46c848e32" fk-column-ref="COL255" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL239" />
+    </relationship>
+    <relationship id="REL327" populated="true" UUID="09fb4f50-6092-4d45-8190-aac0b605091b" deferrability="7" deleteRule="3" fk-table-ref="TAB252" fkCardinality="7" identifying="false" name="project_break_down_parent_id_fkey" physicalName="project_break_down_parent_id_fkey" pk-table-ref="TAB252" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP328" populated="true" UUID="69dd1c8a-d00f-487c-80ac-1c09cc8a2ed8" fk-column-ref="COL254" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL253" />
+    </relationship>
+    <relationship id="REL329" populated="true" UUID="d72775d8-2de6-4c26-baf9-065da9a9121f" deferrability="7" deleteRule="3" fk-table-ref="TAB238" fkCardinality="7" identifying="false" name="package_break_down_package_id_fkey" physicalName="package_break_down_package_id_fkey" pk-table-ref="TAB282" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP330" populated="true" UUID="787b8061-3869-4530-9d73-41ff310cae0a" fk-column-ref="COL241" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL283" />
+    </relationship>
+    <relationship id="REL331" populated="true" UUID="8cd45a23-71bd-4799-8eb0-6205a05d41a0" deferrability="7" deleteRule="3" fk-table-ref="TAB268" fkCardinality="7" identifying="false" name="site_project_working_package_id_fkey" physicalName="site_project_working_package_id_fkey" pk-table-ref="TAB282" pkCardinality="2" updateRule="3" >
+     <column-mapping id="CMP332" populated="true" UUID="464d5d58-a686-4c8a-89e2-fdd08bc14d77" fk-column-ref="COL270" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL283" />
+    </relationship>
+   </relationships>
+  </database>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB334" populated="true" UUID="08b00f55-6fab-428c-a53e-0dbc293514ff" name="app_user" objectType="TABLE" physicalName="app_user" >
+   <remarks>使用者表</remarks>
+   <folder id="FOLTAB3341" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL335" populated="true" UUID="2f441e07-f9c6-4dca-8a3f-49d429dd59e8" autoIncrement="true" defaultValue="nextval(&apos;pri.app_user_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL7" sourceDataTypeName="serial" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>使用者PK</remarks>
+    </column>
+    <column id="COL336" populated="true" UUID="8386dc7c-f0df-488b-a170-5a896e730e08" autoIncrement="false" defaultValue="" name="account" nullable="1" physicalName="account" precision="255" referenceCount="1" scale="0" source-column-ref="COL8" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>帳號(工號)</remarks>
+    </column>
+    <column id="COL337" populated="true" UUID="c312e30a-46b6-454f-ab66-83ce997792f8" autoIncrement="false" defaultValue="" name="employee_no" nullable="1" physicalName="employee_no" precision="255" referenceCount="1" scale="0" source-column-ref="COL9" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL338" populated="true" UUID="76c02930-eec7-4c58-b649-bea04345455f" autoIncrement="false" defaultValue="" name="user_name" nullable="1" physicalName="user_name" precision="30" referenceCount="1" scale="0" source-column-ref="COL10" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>使用者姓名</remarks>
+    </column>
+    <column id="COL339" populated="true" UUID="207e4780-1a47-4311-b5f8-fa7dbe3937f3" autoIncrement="false" defaultValue="" name="encrypt_passwd" nullable="1" physicalName="encrypt_passwd" precision="65" referenceCount="1" scale="0" source-column-ref="COL11" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>加密後的使用者密碼</remarks>
+    </column>
+    <column id="COL340" populated="true" UUID="57383798-bef8-4cd5-9989-3181da3b9b83" autoIncrement="false" defaultValue="&apos;0&apos;::bpchar" name="encrypt_type" nullable="1" physicalName="encrypt_type" precision="1" referenceCount="1" scale="0" source-column-ref="COL12" sourceDataTypeName="bpchar" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>密碼加密方式[0:不加密, 1:md5]</remarks>
+    </column>
+    <column id="COL341" populated="true" UUID="0e609063-7fb6-4a9e-b271-9645139aab9c" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" source-column-ref="COL13" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>操作者</remarks>
+    </column>
+    <column id="COL342" populated="true" UUID="93d8146f-aad9-4101-ab31-e438f7370022" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="0" referenceCount="1" scale="0" source-column-ref="COL14" sourceDataTypeName="timestamp" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks>操作時間</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB3343" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB3342" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB3344" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX343" populated="true" UUID="570167bf-3fff-4e8b-acfe-fce3c9ca0e1a" clustered="false" index-type="BTREE" name="app_user_pkey" physicalName="app_user_pkey" primaryKeyIndex="true" unique="true" >
+     <index-column id="IDC344" populated="true" UUID="47b56641-da8a-46b3-84df-1cb971ebe4b5" ascendingOrDescending="UNSPECIFIED" column-ref="COL335" name="id" physicalName="id" />
+    </index>
+    <index id="IDX345" populated="true" UUID="61cdab22-540e-4447-90db-4d7cad005568" clustered="false" index-type="BTREE" name="app_user_account_key" physicalName="app_user_account_key" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC346" populated="true" UUID="d05b3a09-2efe-4449-bfae-3e4713b4d2d4" ascendingOrDescending="UNSPECIFIED" column-ref="COL336" name="account" physicalName="account" />
+    </index>
+    <index id="IDX347" populated="true" UUID="a783ef4c-329f-4a3c-8a49-fd88a24addbd" clustered="false" index-type="BTREE" name="app_user_employee_no_key" physicalName="app_user_employee_no_key" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC348" populated="true" UUID="4088e4fe-0360-42c1-926c-afef85109f6d" ascendingOrDescending="UNSPECIFIED" column-ref="COL337" name="employee_no" physicalName="employee_no" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB349" populated="true" UUID="b517698f-5bd2-4256-a784-b6b601218a90" name="package_break_down" objectType="TABLE" physicalName="package_break_down" >
+   <remarks>工項包拆解表</remarks>
+   <folder id="FOLTAB3491" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL350" populated="true" UUID="66843528-5bc2-4710-b183-71057171d570" autoIncrement="true" defaultValue="nextval(&apos;work_plan.package_break_down_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL239" sourceDataTypeName="serial" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>工項包拆解表PK</remarks>
+    </column>
+    <column id="COL351" populated="true" UUID="9beb6316-60a5-487c-a1ad-9236ab55b6c3" autoIncrement="false" defaultValue="" name="parent_id" nullable="1" physicalName="parent_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL240" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>父工項包拆解表ID FK</remarks>
+    </column>
+    <column id="COL352" populated="true" UUID="50f72d5a-6f8d-4701-9bff-a3ee67c565d3" autoIncrement="false" defaultValue="" name="package_id" nullable="1" physicalName="package_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL241" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>工項包ID FK</remarks>
+    </column>
+    <column id="COL353" populated="true" UUID="34de976f-6b02-454c-be8a-23e2643961c5" autoIncrement="false" defaultValue="" name="item_name" nullable="1" physicalName="item_name" precision="255" referenceCount="1" scale="0" source-column-ref="COL242" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>項目名稱</remarks>
+    </column>
+    <column id="COL354" populated="true" UUID="5c571f59-87c9-43ab-97a2-2a3f174e59a6" autoIncrement="false" defaultValue="" name="item_description" nullable="1" physicalName="item_description" precision="255" referenceCount="1" scale="0" source-column-ref="COL243" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>項目說明</remarks>
+    </column>
+    <column id="COL355" populated="true" UUID="d8c57781-9e46-4003-9f5f-a10b1921fe58" autoIncrement="false" defaultValue="" name="item_criteria1" nullable="1" physicalName="item_criteria1" precision="10" referenceCount="1" scale="0" source-column-ref="COL244" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>項目條件一</remarks>
+    </column>
+    <column id="COL356" populated="true" UUID="d8c6190e-13be-41f9-98a9-2488a7fa5462" autoIncrement="false" defaultValue="" name="item_criteria2" nullable="1" physicalName="item_criteria2" precision="10" referenceCount="1" scale="0" source-column-ref="COL245" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>項目條件二</remarks>
+    </column>
+    <column id="COL357" populated="true" UUID="a6d06cd0-fc15-4536-a690-eb05e10c5f18" autoIncrement="false" defaultValue="" name="item_criteria3" nullable="1" physicalName="item_criteria3" precision="10" referenceCount="1" scale="0" source-column-ref="COL246" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>項目條件三</remarks>
+    </column>
+    <column id="COL358" populated="true" UUID="78dca6db-1084-4032-9f8c-32fd67f37929" autoIncrement="false" defaultValue="" name="item_criteria4" nullable="1" physicalName="item_criteria4" precision="10" referenceCount="1" scale="0" source-column-ref="COL247" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>項目條件四</remarks>
+    </column>
+    <column id="COL359" populated="true" UUID="70a387cb-f7f7-404d-a9f4-d823495ee7a5" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" source-column-ref="COL248" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>操作者</remarks>
+    </column>
+    <column id="COL360" populated="true" UUID="28d06025-afd3-455a-9868-91dee36977cf" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="0" referenceCount="1" scale="0" source-column-ref="COL249" sourceDataTypeName="timestamp" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks>操作時間</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB3493" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB3492" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB3494" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX361" populated="true" UUID="42f0d446-abd7-44ec-9d93-8999ee9cbe45" clustered="false" index-type="BTREE" name="package_break_down_pkey" physicalName="package_break_down_pkey" primaryKeyIndex="true" unique="true" >
+     <index-column id="IDC362" populated="true" UUID="9b6ae2fa-1df3-4b50-a19f-3b1ae42ad7dd" ascendingOrDescending="UNSPECIFIED" column-ref="COL350" name="id" physicalName="id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB363" populated="true" UUID="72ea5f64-8286-4d89-a205-db7433311da7" name="site_project" objectType="TABLE" physicalName="site_project" >
+   <remarks>專案工地表</remarks>
+   <folder id="FOLTAB3631" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL364" populated="true" UUID="c440fcda-815b-403c-9612-52ed169d78b1" autoIncrement="true" defaultValue="nextval(&apos;work_plan.site_project_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL269" sourceDataTypeName="serial" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>專案工地PK</remarks>
+    </column>
+    <column id="COL365" populated="true" UUID="1471eaa8-07bd-4554-9ee9-5b294b77cde2" autoIncrement="false" defaultValue="" name="working_package_id" nullable="1" physicalName="working_package_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL270" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>工項包 FK</remarks>
+    </column>
+    <column id="COL366" populated="true" UUID="5709abca-253d-4143-91a2-4734ea7f8b17" autoIncrement="false" defaultValue="" name="project_name" nullable="1" physicalName="project_name" precision="255" referenceCount="1" scale="0" source-column-ref="COL271" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>專案名稱</remarks>
+    </column>
+    <column id="COL367" populated="true" UUID="9d6bce3b-3064-4783-9812-025fb790004d" autoIncrement="false" defaultValue="" name="project_status" nullable="1" physicalName="project_status" precision="5" referenceCount="1" scale="0" source-column-ref="COL272" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>專案狀態</remarks>
+    </column>
+    <column id="COL368" populated="true" UUID="22277af2-3019-4068-b87e-dfb7f290b7fb" autoIncrement="false" defaultValue="" name="project_address" nullable="1" physicalName="project_address" precision="255" referenceCount="1" scale="0" source-column-ref="COL273" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>專案位址</remarks>
+    </column>
+    <column id="COL369" populated="true" UUID="c30cbebf-4d46-44a5-bd8b-651b82334d6e" autoIncrement="false" defaultValue="" name="owner" nullable="1" physicalName="owner" precision="255" referenceCount="1" scale="0" source-column-ref="COL274" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>業主</remarks>
+    </column>
+    <column id="COL370" populated="true" UUID="9d82099c-c88e-4259-9d63-fbbb080decf1" autoIncrement="false" defaultValue="" name="contactor" nullable="1" physicalName="contactor" precision="255" referenceCount="1" scale="0" source-column-ref="COL275" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>聯絡人</remarks>
+    </column>
+    <column id="COL371" populated="true" UUID="b63fad9b-a24b-4357-878c-55698163c24c" autoIncrement="false" defaultValue="" name="contact_mobile" nullable="1" physicalName="contact_mobile" precision="40" referenceCount="1" scale="0" source-column-ref="COL276" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>聯絡手機</remarks>
+    </column>
+    <column id="COL372" populated="true" UUID="50b4609b-0f54-4908-b66f-0f264e58b308" autoIncrement="false" defaultValue="" name="note1" nullable="1" physicalName="note1" precision="255" referenceCount="1" scale="0" source-column-ref="COL277" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>備註一</remarks>
+    </column>
+    <column id="COL373" populated="true" UUID="bc59f65d-d518-449e-999d-ed112f0f708f" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" source-column-ref="COL278" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>操作者</remarks>
+    </column>
+    <column id="COL374" populated="true" UUID="48ee73f1-571e-479b-b7dc-2100944b6919" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="0" referenceCount="1" scale="0" source-column-ref="COL279" sourceDataTypeName="timestamp" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks>操作時間</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB3633" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB3632" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB3634" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX375" populated="true" UUID="9b6afce8-4f38-4d4d-aa69-55a14a035e45" clustered="false" index-type="BTREE" name="site_project_pkey" physicalName="site_project_pkey" primaryKeyIndex="true" unique="true" >
+     <index-column id="IDC376" populated="true" UUID="d46ae40c-40f6-40d3-8560-d5179e88bd87" ascendingOrDescending="UNSPECIFIED" column-ref="COL364" name="id" physicalName="id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB377" populated="true" UUID="5d0858ce-9c23-428e-ab36-59f0d354970f" name="project_break_down" objectType="TABLE" physicalName="project_break_down" >
+   <remarks>專案拆解表</remarks>
+   <folder id="FOLTAB3771" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL378" populated="true" UUID="ef6e030c-4fdb-4774-951b-9e611a34d644" autoIncrement="true" defaultValue="nextval(&apos;work_plan.project_break_down_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL253" sourceDataTypeName="serial" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>專案拆解表PK</remarks>
+    </column>
+    <column id="COL379" populated="true" UUID="e39f30f8-386b-4159-bcec-f782c07a3dd7" autoIncrement="false" defaultValue="" name="parent_id" nullable="1" physicalName="parent_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL254" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>父專案拆解ID FK</remarks>
+    </column>
+    <column id="COL380" populated="true" UUID="ebfacfe3-73f3-4e0a-8580-f8467afc0e3a" autoIncrement="false" defaultValue="" name="item_id" nullable="1" physicalName="item_id" precision="0" referenceCount="2" scale="0" source-column-ref="COL255" sourceDataTypeName="int4" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL381" populated="true" UUID="4ca322e3-0907-4146-9429-d77d4b253b71" autoIncrement="false" defaultValue="" name="item_name" nullable="1" physicalName="item_name" precision="255" referenceCount="1" scale="0" source-column-ref="COL256" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>項目名稱</remarks>
+    </column>
+    <column id="COL382" populated="true" UUID="5e9f7ebf-54a0-4803-87b8-5dd417662142" autoIncrement="false" defaultValue="" name="item_description" nullable="1" physicalName="item_description" precision="255" referenceCount="1" scale="0" source-column-ref="COL257" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>項目說明</remarks>
+    </column>
+    <column id="COL383" populated="true" UUID="9a07ea01-54d4-44e4-9afd-1e4258cfd1da" autoIncrement="false" defaultValue="" name="item_criteria1" nullable="1" physicalName="item_criteria1" precision="10" referenceCount="1" scale="0" source-column-ref="COL258" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>項目條件一</remarks>
+    </column>
+    <column id="COL384" populated="true" UUID="e0e2dd8c-924f-4e1c-bbd7-425985ff2eb2" autoIncrement="false" defaultValue="" name="item_criteria2" nullable="1" physicalName="item_criteria2" precision="10" referenceCount="1" scale="0" source-column-ref="COL259" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>項目條件二</remarks>
+    </column>
+    <column id="COL385" populated="true" UUID="3b407ae0-9dd0-4a87-bc4a-43fe869ea35c" autoIncrement="false" defaultValue="" name="item_criteria3" nullable="1" physicalName="item_criteria3" precision="10" referenceCount="1" scale="0" source-column-ref="COL260" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>項目條件三</remarks>
+    </column>
+    <column id="COL386" populated="true" UUID="d4081ed5-cd4b-43af-9abb-17e6b76b3658" autoIncrement="false" defaultValue="" name="item_criteria4" nullable="1" physicalName="item_criteria4" precision="10" referenceCount="1" scale="0" source-column-ref="COL261" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>項目條件四</remarks>
+    </column>
+    <column id="COL387" populated="true" UUID="c377a877-1668-4dde-9578-07907a4a6595" autoIncrement="false" defaultValue="" name="estimate_amount" nullable="1" physicalName="estimate_amount" precision="18" referenceCount="1" scale="6" source-column-ref="COL262" sourceDataTypeName="numeric" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
+     <remarks>預估數量</remarks>
+    </column>
+    <column id="COL388" populated="true" UUID="480d9121-5ca8-4d85-8b0e-2c7a53cd9f08" autoIncrement="false" defaultValue="" name="measure_unit" nullable="1" physicalName="measure_unit" precision="5" referenceCount="1" scale="0" source-column-ref="COL263" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>單位</remarks>
+    </column>
+    <column id="COL389" populated="true" UUID="e2e38c6a-8807-4192-9e6b-61947fb69be1" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" source-column-ref="COL264" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>操作者</remarks>
+    </column>
+    <column id="COL390" populated="true" UUID="1a937921-1478-4adf-bb08-8dda4950b7c5" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="0" referenceCount="1" scale="0" source-column-ref="COL265" sourceDataTypeName="timestamp" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks>操作時間</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB3773" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB3772" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB3774" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX391" populated="true" UUID="017e5275-a69b-493a-b57a-3a1312852677" clustered="false" index-type="BTREE" name="project_break_down_pkey" physicalName="project_break_down_pkey" primaryKeyIndex="true" unique="true" >
+     <index-column id="IDC392" populated="true" UUID="e322aac7-a8f3-49f4-b52e-78dc115ceb25" ascendingOrDescending="UNSPECIFIED" column-ref="COL378" name="id" physicalName="id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB393" populated="true" UUID="00507bcd-de6a-4002-afbc-9cf051ba9a80" name="working_package" objectType="TABLE" physicalName="working_package" >
+   <remarks>工項包表</remarks>
+   <folder id="FOLTAB3931" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL394" populated="true" UUID="87530b6c-5f2a-4887-8b1e-2104677cb61d" autoIncrement="true" defaultValue="nextval(&apos;work_plan.working_package_id_seq&apos;::regclass)" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL283" sourceDataTypeName="serial" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>工項包PK</remarks>
+    </column>
+    <column id="COL395" populated="true" UUID="314bc023-56d2-42fe-86fb-9e4daf162296" autoIncrement="false" defaultValue="" name="package_name" nullable="1" physicalName="package_name" precision="255" referenceCount="1" scale="0" source-column-ref="COL284" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>工項包名稱</remarks>
+    </column>
+    <column id="COL396" populated="true" UUID="d23a40f4-9c99-4eb6-830c-86acb7065278" autoIncrement="false" defaultValue="" name="package_description" nullable="1" physicalName="package_description" precision="255" referenceCount="1" scale="0" source-column-ref="COL285" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>工項包說明</remarks>
+    </column>
+    <column id="COL397" populated="true" UUID="574a0f8e-bfd7-47c2-abf1-732f41e438c6" autoIncrement="false" defaultValue="" name="package_criteria1" nullable="1" physicalName="package_criteria1" precision="10" referenceCount="1" scale="0" source-column-ref="COL286" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>工項包條件一</remarks>
+    </column>
+    <column id="COL398" populated="true" UUID="77f9cb64-3485-49d3-a560-70e94cf540ac" autoIncrement="false" defaultValue="" name="package_criteria2" nullable="1" physicalName="package_criteria2" precision="10" referenceCount="1" scale="0" source-column-ref="COL287" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>工項包條件二</remarks>
+    </column>
+    <column id="COL399" populated="true" UUID="4e11396a-c40a-49ca-9602-1fdd22ca441a" autoIncrement="false" defaultValue="" name="package_criteria3" nullable="1" physicalName="package_criteria3" precision="10" referenceCount="1" scale="0" source-column-ref="COL288" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>工項包條件三</remarks>
+    </column>
+    <column id="COL400" populated="true" UUID="77f5af93-17a1-45fc-a4dc-9a6085779556" autoIncrement="false" defaultValue="" name="operate_by" nullable="1" physicalName="operate_by" precision="30" referenceCount="1" scale="0" source-column-ref="COL289" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>操作者</remarks>
+    </column>
+    <column id="COL401" populated="true" UUID="2932a175-af0f-42ed-9a05-f623ff63e936" autoIncrement="false" defaultValue="now()" name="operate_at" nullable="1" physicalName="operate_at" precision="0" referenceCount="1" scale="0" source-column-ref="COL290" sourceDataTypeName="timestamp" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks>操作時間</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB3933" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB3932" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB3934" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX402" populated="true" UUID="16300e6a-a4a7-40e5-8d6a-3f53c8030769" clustered="false" index-type="BTREE" name="working_package_pkey" physicalName="working_package_pkey" primaryKeyIndex="true" unique="true" >
+     <index-column id="IDC403" populated="true" UUID="1ccbdaf0-f79a-4758-aec3-255041f5f61b" ascendingOrDescending="UNSPECIFIED" column-ref="COL394" name="id" physicalName="id" />
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL404" populated="true" UUID="5ad6941f-274e-4e60-a95b-13f8355cacab" deferrability="7" deleteRule="3" fk-table-ref="TAB349" fkCardinality="7" identifying="false" name="package_break_down_parent_id_fkey" physicalName="package_break_down_parent_id_fkey" pk-table-ref="TAB349" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP405" populated="true" UUID="698cdcb5-935c-4808-9c8d-ebcd0ef9bcb7" fk-column-ref="COL351" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL350" />
+   </relationship>
+   <relationship id="REL406" populated="true" UUID="dbba759f-d876-49af-9946-a1abf7928ad7" deferrability="7" deleteRule="3" fk-table-ref="TAB377" fkCardinality="7" identifying="false" name="project_break_down_item_id_fkey" physicalName="project_break_down_item_id_fkey" pk-table-ref="TAB349" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP407" populated="true" UUID="16dd6ccf-8d3b-4178-ab18-86cb77a63484" fk-column-ref="COL380" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL350" />
+   </relationship>
+   <relationship id="REL408" populated="true" UUID="e289c7f9-9936-4b90-8a75-8bc75ee537d2" deferrability="7" deleteRule="3" fk-table-ref="TAB377" fkCardinality="7" identifying="false" name="project_break_down_parent_id_fkey" physicalName="project_break_down_parent_id_fkey" pk-table-ref="TAB377" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP409" populated="true" UUID="b2cbcdac-003b-4697-9da0-c9266dc69fba" fk-column-ref="COL379" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL378" />
+   </relationship>
+   <relationship id="REL410" populated="true" UUID="f5eea032-2996-483a-9623-63131ee0b91b" deferrability="7" deleteRule="3" fk-table-ref="TAB349" fkCardinality="7" identifying="false" name="package_break_down_package_id_fkey" physicalName="package_break_down_package_id_fkey" pk-table-ref="TAB393" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP411" populated="true" UUID="8ff62660-ebf4-459b-acfd-7b24b9d76547" fk-column-ref="COL352" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL394" />
+   </relationship>
+   <relationship id="REL412" populated="true" UUID="14575ae8-c8ca-4879-9783-20facc4677cd" deferrability="7" deleteRule="3" fk-table-ref="TAB363" fkCardinality="7" identifying="false" name="site_project_working_package_id_fkey" physicalName="site_project_working_package_id_fkey" pk-table-ref="TAB393" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP413" populated="true" UUID="0723326a-cc6e-4388-b9e5-c12219686baf" fk-column-ref="COL365" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL394" />
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB349" x="104" y="312" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB363" x="437" y="45" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB377" x="437" y="312" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB393" x="104" y="45" bgColor="0xf0f0f0" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL404" pkConnection="0.08284023668639054" fkConnection="0.8666666666666667" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="36"/>
+  <table-link relationship-ref="REL408" pkConnection="0.11560693641618497" fkConnection="0.9022222222222223" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="36"/>
+  <table-link relationship-ref="REL406" pkConnection="0.26666666666666666" fkConnection="0.28888888888888886" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL410" pkConnection="0.15508021390374332" fkConnection="0.17159763313609466" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL412" pkConnection="0.19333333333333333" fkConnection="0.26153846153846155" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>
